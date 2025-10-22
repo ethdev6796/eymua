@@ -18,9 +18,9 @@ const credentials = { key: privateKey, cert: certificate };
 
 const httpsServer = https.createServer(credentials, app);
 const config = {
-	userInfoUrl: "http://localhost:8080/realms/ra/protocol/openid-connect/token/introspect",
+	userInfoUrl: "http://172.27.3.30:8080/realms/RA/protocol/openid-connect/token/introspect",
 	clientId: "ra",
-	clientSecret: "A77AXUy02BkNHpfFfgQ9CG4oUn5WK6ZA",
+	clientSecret: "m1aw1RGXfWhwveJ6FD3P0WAXcQMrnVop",
 };
 
 app.use(
@@ -44,7 +44,7 @@ async function getuserdata(accessToken) {
 				},
 			},
 		);
-
+console.log("response===============",response.data)
 		return response.data;
 	} catch (err) {
 		console.error("Error fetching user data:", err.message);
@@ -99,6 +99,6 @@ app.post("/getUserRole", async (req, res) => {
  
 
 const PORT = 5678;
-httpsServer.listen(PORT,"172.20.139.130" ,() => {
+httpsServer.listen(PORT ,() => {
 	console.log(`Server is running on https://172.20.139.130:${PORT}`);
 });

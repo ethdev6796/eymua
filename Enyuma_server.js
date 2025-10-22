@@ -12,9 +12,9 @@ const app = express();
 app.use(express.json());
 
 const config = {
-	userInfoUrl: "http://localhost:8080/realms/ra/protocol/openid-connect/token/introspect",
+	userInfoUrl: "http://172.27.3.30:8080/realms/RA/protocol/openid-connect/token/introspect",
 	clientId: "ra",
-	clientSecret: "A77AXUy02BkNHpfFfgQ9CG4oUn5WK6ZA",
+	clientSecret: "m1aw1RGXfWhwveJ6FD3P0WAXcQMrnVop",
 };
 
 app.use(
